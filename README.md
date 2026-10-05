@@ -1,31 +1,40 @@
-# Student Result Prediction ML CI
+# Experiment No. 1 — Basic Python CI with GitHub Actions
 
-MLOps Practical-1 and Practical-2 using GitHub Actions.
+This repository contains **MLOps Experiment No. 1: Basic Python CI with GitHub Actions**.
 
-## Practical-2 ML Pipeline
+## Objective
 
-The CI workflow installs ML libraries, generates a reproducible 300-student dataset, trains a Logistic Regression classifier, evaluates it, saves the model and metrics, and runs automated ML tests.
+Set up a simple Continuous Integration (CI) pipeline for a Python program using GitHub Actions.
 
-### Files
-- requirements.txt
-- train_model.py
-- test_ml_pipeline.py
-- .github/workflows/ml-ci.yml
+## Project Files
 
-### Input Features
-- attendance
-- internal_marks
-- assignment_marks
-- previous_score
+- `result_logic.py` — Python program for the result logic.
+- `test_result_logic.py` — Automated unit tests.
+- `.github/workflows/ci.yml` — GitHub Actions CI workflow.
 
-Target: 1 = PASS, 0 = FAIL.
+## CI Flow
 
-Generated during CI:
-- student_results.csv
-- student_result_model.pkl
-- metrics.json
+```
+Push code to GitHub
+        ↓
+GitHub Actions starts
+        ↓
+Set up Python
+        ↓
+Install dependencies
+        ↓
+Run automated tests
+        ↓
+PASS / FAIL
+```
 
-### CI Triggers
-- push to main
-- pull request to main
-- manual workflow dispatch
+## Workflow Triggers
+
+The CI workflow runs when:
+
+- Code is pushed to the `main` branch.
+- A pull request is opened against `main`.
+
+## Result
+
+The Python application is automatically tested through GitHub Actions, demonstrating the basic CI process.
